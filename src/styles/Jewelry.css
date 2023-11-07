@@ -1,0 +1,9 @@
+.card-container-electronics{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 6rem;
+}
+.card-inner-electronics img{
+    height: 150px;
+    margin: auto;
+}

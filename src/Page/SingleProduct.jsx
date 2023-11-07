@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import useFetch from "../customHook/useFetch";
 import Card from "react-bootstrap/Card";
 import { ToastContainer, toast } from 'react-toastify';
+import { useContext } from "react";
+import CartContext from "../Context/CartContext";
 
-const SingleProduct = ({cart,handleAddToCart}) => {
+const SingleProduct = () => {
+  const {handleAddToCart} = useContext(CartContext)
   const { id } = useParams();
   const { data, loading } = useFetch(`https://fakestoreapi.com/products/${id}`);
   const{title,price,image,description} = data
@@ -14,6 +17,10 @@ const SingleProduct = ({cart,handleAddToCart}) => {
         position:toast.POSITION.TOP_CENTER 
     });
 }
+useEffect(()=>{
+  document.title = `product | ${title}`
+})
+
 
   return (
     <div className="container">

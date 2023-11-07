@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 // images
 import { BsCart4 } from 'react-icons/bs';
+import { useContext } from "react";
+import CartContext from "../Context/CartContext";
 
-const NavBar = ({cart}) => {
+const NavBar = () => {
+ 
+  const {cart} = useContext(CartContext)
+
   return (
     <div className="sticky-top">
       <Marque />
@@ -15,7 +20,7 @@ const NavBar = ({cart}) => {
         <ul>
           <li className="list-unstyled">
             <Link className="text-decoration-none" to="/">
-              <h2 className="fst-italic text-white">Janat</h2>
+              <h2 className="fst-italic text-white">Favs</h2>
             </Link>
           </li>
         </ul>
