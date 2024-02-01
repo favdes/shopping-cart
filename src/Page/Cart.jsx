@@ -33,7 +33,7 @@ const Cart = () => {
               <div className='col-md-6 d-flex flex-column justify-content-between'>
                 <h2 className='text-danger'> {title} </h2>
                 <div>
-                  <h4> {quantity} * {price} </h4>
+                  <h4> {quantity} * {price} </h4> 
                   <div className='d-flex justify-content-between'>
                     <div>
                     <button onClick={()=>handleIncrease(singleCart)} className="btn btn-success btn-lg ">
